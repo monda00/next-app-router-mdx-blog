@@ -1,6 +1,6 @@
 # next-app-router-mdx-blog
 
-This is based on [app-dir-mdx](https://github.com/vercel/next.js/tree/canary/examples/app-dir-mdx).
+This is based on [app-dir-mdx](https://github.com/vercel/next.js/tree/canary/examples/app-dir-mdx) and [with-mdx-remote](https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote).
 
 ## Features
 
