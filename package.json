@@ -19,6 +19,7 @@
     "react": "^18",
     "react-dom": "^18",
     "rehype": "^13.0.1",
+    "rehype-highlight": "^7.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^3.0.1"
   },

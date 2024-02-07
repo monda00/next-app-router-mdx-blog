@@ -25,7 +25,7 @@ const config: Config = {
             '--tw-prose-captions': theme('colors.pink[700]'),
             '--tw-prose-code': theme('colors.pink[900]'),
             '--tw-prose-pre-code': theme('colors.pink[100]'),
-            '--tw-prose-pre-bg': theme('colors.pink[900]'),
+            '--tw-prose-pre-bg': '#1a1b26',
             '--tw-prose-th-borders': theme('colors.pink[300]'),
             '--tw-prose-td-borders': theme('colors.pink[200]'),
             '--tw-prose-invert-body': theme('colors.pink[200]'),

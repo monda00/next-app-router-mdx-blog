@@ -1,8 +1,10 @@
 import { readFile } from 'fs/promises'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
 import GetAllPostSlugs from '../../../utils/getAllPostSlugs'
+import '../../../styles/tokyo-night-dark.css'
 
 interface PostPageProps {
   params: {
@@ -21,6 +23,12 @@ export default async function PostPage({ params }: PostPageProps) {
     encoding: 'utf8',
   })
   const { content, data } = matter(markdown)
+  const options = {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeHighlight],
+    },
+  }
 
   return (
     <div>
@@ -31,11 +39,9 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
       <div>
         <h1>Markdown content</h1>
-        <div className="prose dark:prose-invert prose-h1:underline prose-h2:prose-pink">
-          <MDXRemote
-            source={content}
-            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-          />
+        <div className="prose prose-pink prose-h1:underline">
+          {/* @ts-expect-error the actual code should just work but the types depend on a new major of unified */}
+          <MDXRemote source={content} options={options} />
         </div>
       </div>
     </div>
