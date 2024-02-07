@@ -31,10 +31,12 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
       <div>
         <h1>Markdown content</h1>
-        <MDXRemote
-          source={content}
-          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-        />
+        <div className="prose dark:prose-invert">
+          <MDXRemote
+            source={content}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          />
+        </div>
       </div>
     </div>
   )
