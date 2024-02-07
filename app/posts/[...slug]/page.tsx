@@ -31,7 +31,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
       <div>
         <h1>Markdown content</h1>
-        <div className="prose dark:prose-invert">
+        <div className="prose dark:prose-invert prose-h1:underline prose-h2:prose-pink">
           <MDXRemote
             source={content}
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
