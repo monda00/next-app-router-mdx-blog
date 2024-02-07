@@ -1,7 +1,8 @@
 import { readFile } from 'fs/promises'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import GetAllPostSlugs from '../../../utils/getAllPostSlugs' // Fixed import
+import remarkGfm from 'remark-gfm'
+import GetAllPostSlugs from '../../../utils/getAllPostSlugs'
 
 interface PostPageProps {
   params: {
@@ -30,7 +31,10 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
       <div>
         <h1>Markdown content</h1>
-        <MDXRemote source={content} />
+        <MDXRemote
+          source={content}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
       </div>
     </div>
   )
