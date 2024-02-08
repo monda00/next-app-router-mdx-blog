@@ -2,6 +2,8 @@ import { readFile } from 'fs/promises'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeHighlight from 'rehype-highlight'
+import rehypeSlug from 'rehype-slug'
+import rehypeToc from 'rehype-toc'
 import remarkGfm from 'remark-gfm'
 import GetAllPostSlugs from '../../../utils/getAllPostSlugs'
 import '../../../styles/tokyo-night-dark.css'
@@ -26,7 +28,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const options = {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeHighlight],
+      rehypePlugins: [rehypeHighlight, rehypeSlug, rehypeToc],
     },
   }
 
