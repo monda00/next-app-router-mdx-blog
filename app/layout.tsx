@@ -18,10 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`prose prose-stone ${inter.className} min-h-screen bg-background antialiased`}
-      >
-        <div className="mx-auto max-w-2xl px-4 py-10">
+      <body className={`prose ${inter.className}`}>
+        <div className="flex flex-col min-h-screen">
           <Header />
           <main>{children}</main>
           <Footer />

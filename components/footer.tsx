@@ -2,17 +2,17 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className="mt-24 flex justify-center">
-      <div className="space-y-12 pt-16">
+    <footer className="w-screen mt-auto flex justify-center bg-slate-500">
+      <div className="space-y-12 pt-12">
         <nav className="space-x-6 text-center text-sm font-medium">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
+          <Link href="/" className="text-white">
+            Home
+          </Link>
         </nav>
 
         <div className="text-center">
-          <p className="text-sm text-gray-500">
-            &copy; <Link href="/">Next.js Blog with MDX</Link>. All rights
-            reserved.
+          <p className="text-sm text-white">
+            Next.js Blog with MDX. All rights reserved.
           </p>
         </div>
       </div>
