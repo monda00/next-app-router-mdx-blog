@@ -12,7 +12,7 @@ function PostList({ posts }: PostListProps) {
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
-            <Link href={`/posts/${post.slug}`}>
+            <Link href={`/${post.slug}`}>
               <h3>{post.data.title}</h3>
               <p>{post.data.description}</p>
             </Link>

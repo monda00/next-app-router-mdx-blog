@@ -3,8 +3,8 @@ import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 import rehypeToc from 'rehype-toc'
 import remarkGfm from 'remark-gfm'
-import { GetAllPostSlugs, GetPostBySlug } from '../../../utils/posts'
-import '../../../styles/tokyo-night-dark.css'
+import { GetAllPostSlugs, GetPostBySlug } from '../../utils/posts'
+import '../../styles/tokyo-night-dark.css'
 
 interface PostPageProps {
   params: {
