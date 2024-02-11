@@ -1,11 +1,9 @@
-import { readFile } from 'fs/promises'
-import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 import rehypeToc from 'rehype-toc'
 import remarkGfm from 'remark-gfm'
-import GetAllPostSlugs from '../../../utils/getAllPostSlugs'
+import { GetAllPostSlugs, GetPostBySlug } from '../../../utils/posts'
 import '../../../styles/tokyo-night-dark.css'
 
 interface PostPageProps {
@@ -21,10 +19,7 @@ export async function generateStaticParams() {
 
 export default async function PostPage({ params }: PostPageProps) {
   const slug = params.slug.join('/')
-  const markdown = await readFile(`contents/posts/${slug}.mdx`, {
-    encoding: 'utf8',
-  })
-  const { content, data } = matter(markdown)
+  const { content, data } = GetPostBySlug(slug)
   const options = {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
