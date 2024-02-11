@@ -4,8 +4,10 @@ This is based on [app-dir-mdx](https://github.com/vercel/next.js/tree/canary/exa
 
 ## Features
 
+- Next.js
+  - App Router
 - Typescript
-- App Router
+- Tailwind CSS
 - `@next/mdx` and `next-mdx-remote`
 
 ## References
