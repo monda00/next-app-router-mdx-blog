@@ -47,6 +47,13 @@ const config: Config = {
           },
         },
       }),
+      spacing: {
+        '128': '32rem',
+        '160': '40rem',
+        '192': '48rem',
+        '224': '56rem',
+        '256': '64rem',
+      },
     },
   },
   darkMode: 'media',

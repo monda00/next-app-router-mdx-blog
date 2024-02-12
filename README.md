@@ -9,6 +9,7 @@ This is based on [app-dir-mdx](https://github.com/vercel/next.js/tree/canary/exa
 - Typescript
 - Tailwind CSS
 - `@next/mdx` and `next-mdx-remote`
+- Framer Motion
 
 ## References
 
