@@ -1,5 +1,6 @@
 import CategoryList from '@/components/categoryList'
 import PostList from '@/components/postList'
+import ProfileCard from '@/components/profileCard'
 import { GetAllPosts } from '@/utils/posts'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       </div>
       <div className="w-2/6">
         <CategoryList />
+        <ProfileCard />
       </div>
     </div>
   )
