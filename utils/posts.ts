@@ -19,6 +19,21 @@ export function GetPostBySlug(slug: string) {
   }
 }
 
+export function GetPostsByCategory(category: string) {
+  const slugs = GetAllPostSlugs()
+  const posts = slugs.map((slug) => {
+    const markdown = readFileSync(`contents/posts/${slug}.mdx`, 'utf8')
+
+    const { content, data } = matter(markdown)
+    return {
+      slug,
+      content,
+      data,
+    }
+  })
+  return posts.filter((post) => post.data.category == category)
+}
+
 export function GetAllPosts() {
   const slugs = GetAllPostSlugs()
   return slugs.map((slug) => {
