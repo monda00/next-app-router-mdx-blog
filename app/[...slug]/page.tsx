@@ -8,7 +8,7 @@ import '../../styles/tokyo-night-dark.css'
 
 interface PostPageProps {
   params: {
-    slug: string[]
+    slug: string
   }
 }
 
@@ -18,8 +18,7 @@ export async function generateStaticParams() {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const slug = params.slug.join('/')
-  const { content, data } = GetPostBySlug(slug)
+  const { content, data } = GetPostBySlug(params.slug)
   const options = {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
