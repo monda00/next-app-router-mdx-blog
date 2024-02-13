@@ -7,7 +7,7 @@ interface PostListProps {
 
 function PostList({ posts }: PostListProps) {
   return (
-    <div>
+    <div className="mx-5">
       {posts.map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}
