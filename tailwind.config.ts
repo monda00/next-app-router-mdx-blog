@@ -10,6 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       typography: (theme: PluginAPI['theme']) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-pre-bg': '#1a1b26',
+          },
+        },
         pink: {
           css: {
             '--tw-prose-body': theme('colors.pink[800]'),
@@ -48,11 +53,15 @@ const config: Config = {
         },
       }),
       spacing: {
+        //'16': '4rem',
         '128': '32rem',
         '160': '40rem',
         '192': '48rem',
         '224': '56rem',
+        '240': '60rem',
         '256': '64rem',
+        '272': '68rem',
+        '288': '72rem',
       },
     },
   },
