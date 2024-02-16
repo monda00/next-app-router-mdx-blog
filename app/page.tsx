@@ -12,7 +12,9 @@ export default function Home() {
       </div>
       <div className="w-2/6">
         <CategoryList />
-        <ProfileCard />
+        <div className="mt-3">
+          <ProfileCard />
+        </div>
       </div>
     </div>
   )

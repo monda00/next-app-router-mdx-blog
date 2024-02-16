@@ -5,7 +5,7 @@ import { CustomIcon } from './custom-icon'
 
 function ProfileCard() {
   return (
-    <div className="mt-3 px-3 rounded-xl bg-white">
+    <div className="mx-5 rounded-xl bg-white">
       <div className="flex flex-col justify-center pt-5">
         <Image
           src="/author.webp"

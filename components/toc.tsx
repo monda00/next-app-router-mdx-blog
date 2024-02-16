@@ -9,17 +9,18 @@ function Toc() {
       tocSelector: '.toc',
       contentSelector: '.post',
       activeLinkClass: 'is-active',
-      scrollSmoothOffset: -40,
-      headingSelector: 'h1, h2, h3, h4',
+      headingSelector: 'h1, h2, h3',
+      scrollSmoothOffset: -300,
+      headingsOffset: -300,
     })
 
     return () => tocbot.destroy()
   }, [])
 
   return (
-    <div className="bg-white mx-5 p-5 rounded-lg">
+    <div className="sticky top-0 bg-white mx-5 p-5 rounded-lg mt-3">
       <h3 className="flex justify-center my-5">Table of Contents</h3>
-      <nav className="toc" />
+      <div className="toc"></div>
     </div>
   )
 }
