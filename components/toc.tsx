@@ -18,9 +18,9 @@ function Toc() {
   }, [])
 
   return (
-    <div className="sticky top-0 bg-white mx-5 p-5 rounded-lg mt-3">
-      <h3 className="flex justify-center my-5">Table of Contents</h3>
-      <div className="toc"></div>
+    <div className="sticky top-0 bg-base-200 w-72 rounded-box mt-5">
+      <h3 className="flex justify-center mt-5">Table of Contents</h3>
+      <div className="toc px-8 pb-8"></div>
     </div>
   )
 }

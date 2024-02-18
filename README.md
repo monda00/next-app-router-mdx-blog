@@ -8,10 +8,12 @@ This is based on [app-dir-mdx](https://github.com/vercel/next.js/tree/canary/exa
   - App Router
 - Typescript
 - Tailwind CSS
-- `@next/mdx` and `next-mdx-remote`
+- next-mdx-remote
+- next-themes
 - Framer Motion
 - React Icons
 - Tocbot
+- daisyUI
 
 ## References
 

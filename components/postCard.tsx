@@ -14,18 +14,16 @@ function PostCard({ post }: PostCardProps) {
     <motion.div
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
       whileTap={{ scale: 0.98 }}
+      className="card w-128 bg-base-100 shadow-xl m-5"
     >
       <Link href={`/${post.slug}`}>
-        <div className="w-full mx-auto bg-white rounded-xl shadow-xl overflow-hidden m-5">
-          <div className="px-4">
-            <Image
-              src={`/${post.slug}/cover.webp`}
-              width={1200}
-              height={600}
-              alt={post.data.title}
-            />
-          </div>
-        </div>
+        <Image
+          src={`/${post.slug}/cover.webp`}
+          width={1200}
+          height={600}
+          alt={post.data.title}
+          className="rounded-lg my-0"
+        />
       </Link>
     </motion.div>
   )

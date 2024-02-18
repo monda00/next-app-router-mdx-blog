@@ -3,16 +3,16 @@ import { categories } from '@/utils/constants'
 
 function CategoryList() {
   return (
-    <div className="mx-5 px-5 pb-3 rounded-xl bg-white">
-      <p className="flex justify-center pt-5 font-bold text-lg">Categories</p>
-      <ul className="list-none">
-        {Object.entries(categories).map(([key, value]) => (
-          <li key={key}>
-            <Link href={`/category/${key}`}>{value}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="menu bg-base-200 w-72 rounded-box">
+      <li className="menu-title">Categories</li>
+      {Object.entries(categories).map(([key, value]) => (
+        <li key={key}>
+          <Link href={`/category/${key}`} className="no-underline">
+            {value}
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
 

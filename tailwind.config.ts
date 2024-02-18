@@ -66,6 +66,14 @@ const config: Config = {
     },
   },
   darkMode: 'media',
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    themes: ['nord', 'dracula'],
+    base: true,
+    styled: true,
+    utils: true,
+    prefix: '',
+    logs: true,
+  },
 }
 export default config
