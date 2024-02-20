@@ -1,9 +1,8 @@
 import PostContent from '../../components/postContent'
+import PostTitle from '../../components/postTitle'
 import ProfileCard from '../../components/profileCard'
 import Toc from '../../components/toc'
-import PostTitle from '../../components/postTitle'
 import { GetAllPostSlugs, GetPostBySlug } from '../../utils/posts'
-import '../../styles/tokyo-night-dark.css'
 
 interface PostPageProps {
   params: {

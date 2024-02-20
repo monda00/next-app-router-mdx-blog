@@ -1,7 +1,7 @@
-import rehypeHighlight from 'rehype-highlight'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import CodeBlock from './codeBlock'
 
 interface PostContentProps {
   content: string
@@ -11,13 +11,22 @@ function PostContent({ content }: PostContentProps) {
   const options = {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeHighlight, rehypeSlug],
+      rehypePlugins: [rehypeSlug],
     },
   }
+
+  const components = {
+    h2: (props: React.PropsWithChildren<object>) => (
+      <h2 className="text-4xl font-bold text-primary">{props.children}</h2>
+    ),
+    pre: (props: React.PropsWithChildren<object>) => (
+      <CodeBlock>{props.children}</CodeBlock>
+    ),
+  }
+
   return (
     <div className="post prose max-w-full bg-base-200 rounded-lg p-8 mx-5">
-      {/* @ts-expect-error the actual code should just work but the types depend on a new major of unified */}
-      <MDXRemote source={content} options={options} />
+      <MDXRemote source={content} options={options} components={components} />
     </div>
   )
 }

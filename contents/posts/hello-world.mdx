@@ -14,7 +14,7 @@ This is an example post.
 
 ## Code
 
-```go
+```go;main.go
 package main
 
 import "fmt"
@@ -24,7 +24,7 @@ func main() {
 }
 ```
 
-```yaml
+```yaml:kubernetes/manifest/pod.yaml
 kind: Pod
 apiVersion: v1
 metadata:
@@ -71,7 +71,7 @@ https://amateur-engineer-blog.com/
 
 ### Go
 
-```go
+```go:main.go
 package main
 
 import "fmt"
@@ -83,7 +83,9 @@ func main() {
 
 #### Gin
 
-```go
+This is a simple example of a web server using the `Gin` framework.
+
+```go:main.go
 package main
 
 import "github.com/gin-gonic/gin"
