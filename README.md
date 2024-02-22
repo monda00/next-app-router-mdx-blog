@@ -15,6 +15,7 @@ This is based on [app-dir-mdx](https://github.com/vercel/next.js/tree/canary/exa
 - React Icons
 - Tocbot
 - daisyUI
+- openGraphScraper
 
 ## References
 

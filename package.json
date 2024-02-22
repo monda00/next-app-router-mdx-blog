@@ -18,6 +18,7 @@
     "next": "14.1.0",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
+    "open-graph-scraper": "^6.4.0",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",

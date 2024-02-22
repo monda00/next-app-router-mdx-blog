@@ -1,7 +1,10 @@
+import { MDXComponents } from 'mdx/types'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import CodeBlock from './codeBlock'
+import LinkCard from './linkCard'
+import type { LinkCardProps } from './linkCard'
 
 interface PostContentProps {
   content: string
@@ -15,7 +18,10 @@ function PostContent({ content }: PostContentProps) {
     },
   }
 
-  const components = {
+  const components: MDXComponents = {
+    a: (props: React.PropsWithChildren<LinkCardProps>) => (
+      <LinkCard {...props} />
+    ),
     h2: (props: React.PropsWithChildren<object>) => (
       <h2 className="text-4xl font-bold text-primary">{props.children}</h2>
     ),
