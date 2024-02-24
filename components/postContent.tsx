@@ -4,7 +4,6 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import CodeBlock from './codeBlock'
 import LinkCard from './linkCard'
-import type { LinkCardProps } from './linkCard'
 
 interface PostContentProps {
   content: string
@@ -19,8 +18,8 @@ function PostContent({ content }: PostContentProps) {
   }
 
   const components: MDXComponents = {
-    a: (props: React.PropsWithChildren<LinkCardProps>) => (
-      <LinkCard {...props} />
+    p: (props: React.PropsWithChildren<object>) => (
+      <LinkCard>{props.children}</LinkCard>
     ),
     h2: (props: React.PropsWithChildren<{ id?: string }>) => (
       <h2 id={props.id} className="text-4xl font-bold text-primary">
