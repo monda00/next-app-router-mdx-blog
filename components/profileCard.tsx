@@ -12,7 +12,7 @@ function ProfileCard() {
           width={100}
           height={100}
           alt="author"
-          className="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto"
+          className="w-auto h-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto"
         />
         <h2 className="mx-auto my-0 p-3">Masa</h2>
         <p className="mx-auto px-5">Hi, I&apos;m Masa!</p>
