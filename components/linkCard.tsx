@@ -39,10 +39,10 @@ async function LinkCard({ children, href }: LinkCardProps) {
             )}
           </div>
           <div className="flex-grow">
-            <h2 className="text-lg font-semibold text-primary my-2">
+            <p className="text-lg font-semibold text-primary my-1">
               {ogpData.ogTitle}
-            </h2>
-            <p className="text-sm text-neutral-content mb-2">
+            </p>
+            <p className="text-sm text-neutral-content mb-1 mt-0">
               {ogpData.ogDescription}
             </p>
           </div>

@@ -9,9 +9,9 @@ function Toc() {
       tocSelector: '.toc',
       contentSelector: '.post',
       activeLinkClass: 'is-active',
-      headingSelector: 'h1, h2, h3',
+      headingSelector: 'h2, h3',
       scrollSmoothOffset: -300,
-      headingsOffset: -300,
+      headingsOffset: 300,
     })
 
     return () => tocbot.destroy()

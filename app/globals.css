@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toc-link {
+  @apply text-neutral-400 no-underline transition-colors duration-200;
+}
+
+.toc-link:hover {
+  @apply text-neutral-600;
+}
+
+.toc-list-item {
+  @apply list-none;
+}
+
+.is-active {
+  @apply text-primary font-bold;
+}

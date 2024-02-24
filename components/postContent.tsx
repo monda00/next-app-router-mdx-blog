@@ -22,8 +22,10 @@ function PostContent({ content }: PostContentProps) {
     a: (props: React.PropsWithChildren<LinkCardProps>) => (
       <LinkCard {...props} />
     ),
-    h2: (props: React.PropsWithChildren<object>) => (
-      <h2 className="text-4xl font-bold text-primary">{props.children}</h2>
+    h2: (props: React.PropsWithChildren<{ id?: string }>) => (
+      <h2 id={props.id} className="text-4xl font-bold text-primary">
+        {props.children}
+      </h2>
     ),
     pre: (props: React.PropsWithChildren<object>) => (
       <CodeBlock>{props.children}</CodeBlock>
