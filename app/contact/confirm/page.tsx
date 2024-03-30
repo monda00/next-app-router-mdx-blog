@@ -1,16 +1,16 @@
-import ContactForm from '@/components/contact/contactForm'
+import ContactConfirm from '@/components/contact/contactConfirm'
 
-function Contact() {
+function Confirm() {
   return (
     <>
       <h1 className="flex justify-center text-2xl md:text-4xl my-10">
         Contact
       </h1>
       <div className="flex justify-center">
-        <ContactForm />
+        <ContactConfirm />
       </div>
     </>
   )
 }
 
-export default Contact
+export default Confirm

@@ -2,18 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+.toc-list {
+  @apply w-full my-0 px-0;
+}
+
 .toc-link {
-  @apply text-neutral-400 no-underline transition-colors duration-200;
+  @apply text-neutral-400 font-medium no-underline transition-colors duration-200 rounded-md inline-block w-full py-1.5 pl-2;
+}
+
+.is-collapsible .toc-link {
+  @apply ml-2 font-normal;
 }
 
 .toc-link:hover {
-  @apply text-neutral-600;
+  @apply text-primary bg-base-200;
 }
 
 .toc-list-item {
-  @apply list-none;
+  @apply list-none w-full rounded-md py-0 my-0;
 }
 
-.is-active {
-  @apply text-primary font-bold;
+.is-active-link {
+  @apply text-primary font-bold bg-base-300;
+}
+
+a:hover {
+  @apply text-primary;
+}
+
+.post {
+  li::marker {
+    @apply text-primary;
+  }
 }

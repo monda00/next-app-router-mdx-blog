@@ -1,20 +1,32 @@
-import CategoryList from '@/components/categoryList'
-import PostList from '@/components/postList'
-import ProfileCard from '@/components/profileCard'
-import { GetAllPosts } from '@/utils/posts'
+import CategoryTop from '@/components/category/categoryTop'
+import NewPostsTop from '@/components/post/newPostsTop'
+import PickUpTop from '@/components/post/pickUpTop'
+import RankingTop from '@/components/post/rankingTop'
+import ProfileCardHome from '@/components/ui/profileCardHome'
+import { GetAllPosts, GetPickUpPosts } from '@/libs/posts'
+import type { Post } from '@/types/post'
 
-export default function Home() {
+export default async function Home() {
   const posts = GetAllPosts()
+  const pickupPosts = GetPickUpPosts()
   return (
-    <div className="flex justivy-center w-224">
-      <div className="w-4/6">
-        <PostList posts={posts} />
+    <div className="w-full">
+      <div className="bg-base-100">
+        <CategoryTop />
       </div>
-      <div className="w-2/6">
-        <CategoryList />
-        <div className="mt-3">
-          <ProfileCard />
-        </div>
+      <div className="bg-base-200">
+        <NewPostsTop posts={posts.slice(0, 3) as [Post, Post, Post]} />
+      </div>
+      <div className="bg-base-100">
+        <RankingTop />
+      </div>
+      <div className="bg-base-200">
+        <PickUpTop
+          posts={pickupPosts as [Post, Post, Post, Post, Post, Post]}
+        />
+      </div>
+      <div>
+        <ProfileCardHome />
       </div>
     </div>
   )
