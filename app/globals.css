@@ -30,8 +30,6 @@ a:hover {
   @apply text-primary;
 }
 
-.post {
-  li::marker {
-    @apply text-primary;
-  }
+.post li::marker {
+  @apply text-primary;
 }
