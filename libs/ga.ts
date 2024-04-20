@@ -26,7 +26,7 @@ export async function fetchPopularPosts(pageSize: number): Promise<string[]> {
         fieldName: 'pagePath',
         stringFilter: {
           matchType: 5,
-          value: '^/[0-9a-zA-Z-]+/$',
+          value: '^/[0-9a-zA-Z-]+$',
         },
       },
     },
