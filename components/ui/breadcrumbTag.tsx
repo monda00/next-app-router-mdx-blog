@@ -14,7 +14,7 @@ function BreadcrumbTag({ tagName }: BreadcrumbTagProps) {
 
   return (
     <div className="mt-8 ml-8 md:ml-0">
-      <p className="flex items-center justify-start text-base-content text-sm">
+      <p className="flex items-center justify-start text-base-content text-sm font-medium">
         <Link href="/" className="no-underline">
           <span className="flex items-center">
             <CustomIcon icon={IoHomeOutline} size={20} className="mr-1" />

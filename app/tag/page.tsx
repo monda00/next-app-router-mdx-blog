@@ -8,7 +8,7 @@ export default function TagPage() {
 
   return (
     <div className="w-96 md:w-180 lg:w-240 xl:w-304 pb-10 mx-auto">
-      <h2 className="flex justify-center items-center text-2xl md:text-3xl">
+      <h2 className="flex justify-center items-center text-2xl md:text-3xl font-bold mt-16 mb-8">
         <CustomIcon icon={FaTags} size={28} className="text-secondary mr-2" />
         Tag
       </h2>

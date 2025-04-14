@@ -9,8 +9,8 @@ interface RelatedPostsProps {
 function RelatedPosts({ category, mySlug }: RelatedPostsProps) {
   const posts = GetRelatedPosts(category, mySlug)
   return (
-    <div className="prose max-w-full p-4">
-      <h2 className="text-xl border-l-4 border-secondary pl-1">
+    <div className="max-w-full p-4">
+      <h2 className="text-xl font-bold border-l-4 border-secondary pl-1 mt-8 mb-4">
         Related Posts
       </h2>
       <div className="flex justify-center mx-auto">

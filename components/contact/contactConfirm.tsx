@@ -35,7 +35,7 @@ function ContactConfirm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <table className="table-sm md:table-lg table-zebra w-80 md:w-160 mx-auto">
+      <table className="table-sm md:table-lg table-zebra text-base-content w-80 md:w-160 mx-auto">
         <tbody>
           <tr>
             <th>Name</th>

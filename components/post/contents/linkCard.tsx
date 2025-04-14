@@ -43,7 +43,7 @@ async function LinkCard({ children }: LinkCardProps) {
   return (
     <Link
       href={ogpData.ogUrl || children.props.href}
-      className="flex space-x-4 no-underline "
+      className="not-prose flex space-x-4 no-underline "
     >
       <div className="flex item-center h-40 w-full bg-linkcard shadow-xl rounded-xl p-4 my-4">
         <div className="flex item-center">
@@ -64,7 +64,7 @@ async function LinkCard({ children }: LinkCardProps) {
             </div>
           )}
         </div>
-        <div className="flex-grow ml-4 overflow-hidden">
+        <div className="grow ml-4 overflow-hidden">
           <p className="text-base font-semibold text-primary my-1">
             {ogpData.ogTitle || children.props.href}
           </p>

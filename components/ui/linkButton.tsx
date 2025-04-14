@@ -14,7 +14,7 @@ function LinkButton({ children, link, className = '' }: LinkButtonProps) {
   return (
     <Link href={link}>
       <motion.button
-        className={`btn btn-primary text-base-100 rounded-3xl px-10 ${className}`}
+        className={`btn btn-lg btn-primary text-base-100 rounded-3xl px-10 ${className}`}
         whileHover={{ scale: 1.05 }}
         whileFocus={{
           outline: 0,

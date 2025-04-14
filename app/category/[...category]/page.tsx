@@ -8,9 +8,9 @@ import { allCategories } from '@/libs/constants'
 import { GetPostsByCategory } from '@/libs/posts'
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string
-  }
+  }>
 }
 
 export function generateStaticParams() {
@@ -18,7 +18,8 @@ export function generateStaticParams() {
   return categoryKeys.map((category) => ({ params: { category } }))
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage(props: CategoryPageProps) {
+  const params = await props.params
   const { category } = params
   const posts = GetPostsByCategory(category)
 
@@ -28,7 +29,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     <div className="w-96 md:w-180 lg:w-240 xl:w-304 mx-auto">
       <BreadcrumbCategory category={category} className="mt-8 ml-8 md:ml-0" />
       <div className="flex flex-col justify-center items-center md:items-stretch">
-        <h2 className="flex mt-5">
+        <h2 className="flex text-2xl font-bold mt-8 mb-4">
           <CategoryIcon
             category={category[0]}
             size={30}

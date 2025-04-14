@@ -3,12 +3,11 @@ import { siteURL, siteName } from '@/libs/constants'
 import { GetPostBySlug } from '@/libs/posts'
 
 interface LayoutProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export async function generateMetadata({
-  params,
-}: LayoutProps): Promise<Metadata> {
+export async function generateMetadata(props: LayoutProps): Promise<Metadata> {
+  const params = await props.params
   const slug = params.slug
   const post = GetPostBySlug(slug)
   const description = post.content

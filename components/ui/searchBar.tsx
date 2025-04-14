@@ -51,15 +51,11 @@ export default function SearchModal() {
           dialogRef.current?.showModal()
           setTimeout(() => inputRef.current?.focus(), 100)
         }}
-        className="btn btn-ghost gap-2 mr-0 sm:mr-8"
+        className="btn btn-ghost btn-secondary gap-2 mr-0 sm:mr-8"
       >
-        <CustomIcon
-          icon={FaSearch}
-          size={20}
-          className="text-primary-content opacity-50"
-        />
-        <kbd className="hidden sm:block kbd kbd-sm text-base-content">⌘</kbd>
-        <kbd className="hidden sm:block kbd kbd-sm text-base-content">K</kbd>
+        <CustomIcon icon={FaSearch} size={20} />
+        <kbd className="hidden sm:block kbd kbd-md text-base-content">⌘</kbd>
+        <kbd className="hidden sm:block kbd kbd-md text-base-content">K</kbd>
       </button>
 
       <dialog
@@ -70,12 +66,8 @@ export default function SearchModal() {
         <div className="modal-box w-full max-w-2xl p-4 flex flex-col">
           <div className="border-b border-base-300">
             <h3 className="font-bold text-lg my-2">記事検索</h3>
-            <label className="input input-bordered flex items-center gap-2 mt-4 mb-2">
-              <CustomIcon
-                icon={FaSearch}
-                size={20}
-                className="text-base-content opacity-50"
-              />
+            <label className="input input-lg w-full mt-4 mb-2">
+              <CustomIcon icon={FaSearch} size={24} className="opacity-50" />
               <input
                 type="text"
                 placeholder="検索..."

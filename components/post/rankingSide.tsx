@@ -8,7 +8,7 @@ async function RankingSide() {
   const posts = await GetRankingPosts()
   return (
     <div className="flex flex-col justify-center w-80 md:w-44 lg:w-60 xl:w-72">
-      <h3 className="flex">
+      <h3 className="flex text-xl font-semibold mt-8 mb-4">
         <CustomIcon
           icon={PiMedalDuotone}
           size={30}

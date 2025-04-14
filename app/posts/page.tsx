@@ -8,7 +8,7 @@ export default function Posts() {
   const posts = GetAllPosts()
   return (
     <div className="flex flex-col justify-center items-center md:items-stretch w-96 md:w-180 lg:w-240 xl:w-304 mx-auto">
-      <h2>New Posts</h2>
+      <h2 className="text-2xl font-bold mt-16 mb-8">New Posts</h2>
       <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch w-full">
         <div className="w-full md:w-9/12 pr-0 md:pr-5 lg:pr-10">
           <PostList posts={posts} />

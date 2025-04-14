@@ -39,7 +39,7 @@ function ContactForm() {
       {errors.name && <p className="text-error mt-0">{errors.name.message}</p>}
       <label className="form-control w-full">
         <div className="label py-2">
-          <span className="label-text flex items-center text-base">
+          <span className="label-text flex items-center text-base-content">
             <CustomIcon icon={MdEmail} size={24} className="mr-2" />
             Mail Address
             <span className="text-error text-2xl font-bold ml-1"> * </span>
@@ -54,7 +54,7 @@ function ContactForm() {
             },
           })}
           type="text"
-          className="input input-bordered w-full m-0 px-4 py-2 mb-4"
+          className="input w-full m-0 px-4 py-2 mb-4"
         />
       </label>
       {errors.email && (
@@ -62,7 +62,7 @@ function ContactForm() {
       )}
       <label className="form-control w-full">
         <div className="label py-2">
-          <span className="label-text flex items-center text-base">
+          <span className="label-text flex items-center text-base-content">
             <CustomIcon icon={MdTitle} size={24} className="mr-2" />
             Title
             <span className="text-error text-2xl font-bold ml-1"> * </span>
@@ -71,7 +71,7 @@ function ContactForm() {
         <input
           {...register('title', { required: 'Required' })}
           type="text"
-          className="input input-bordered w-full m-0 px-4 py-2 mb-4"
+          className="input w-full m-0 px-4 py-2 mb-4"
         />
       </label>
       {errors.title && (
@@ -79,7 +79,7 @@ function ContactForm() {
       )}
       <label className="form-control w-full">
         <div className="label py-2">
-          <span className="label-text flex items-center text-base">
+          <span className="label-text flex items-center text-base-content">
             <CustomIcon icon={FaRegMessage} size={24} className="mr-2" />
             Message
             <span className="text-error text-2xl font-bold ml-1"> * </span>
@@ -96,7 +96,7 @@ function ContactForm() {
       <br />
       <button
         type="submit"
-        className="btn btn-primary text-base-100 rounded-xl mx-10"
+        className="btn btn-lg btn-primary text-base-100 rounded-xl mx-10"
       >
         Confirm
       </button>

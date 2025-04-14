@@ -28,29 +28,35 @@ function CodeBlock({ children }: CodeBlockProps) {
   const codeText = String(children.props.children).replace(/\n$/, '')
 
   return (
-    <div className={'relative my-5'}>
+    <div className="relative my-5">
       {fileName && (
         <div className="max-w-fit text-neutral-content bg-neutral rounded-t-lg">
           <span className="p-3">{fileName}</span>
         </div>
       )}
-      <SyntaxHighlighter
-        language={language}
-        style={nord}
-        showLineNumbers={true}
-        customStyle={{
-          marginTop: '0',
-          borderTopLeftRadius: fileName ? '0' : '0.5rem',
-          borderTopRightRadius: '0.5rem',
-          borderBottomLeftRadius: '0.5rem',
-          borderBottomRightRadius: '0.5rem',
-          backgroundColor: 'oklch(var(--n))',
-        }}
+      <div
+        className={`bg-neutral rounded-br-lg rounded-bl-lg rounded-tr-lg ${
+          !fileName ? 'rounded-tl-lg' : ''
+        }`}
       >
-        {codeText}
-      </SyntaxHighlighter>
-      <div className={`absolute right-3 ${fileName ? 'top-11' : 'top-3'}`}>
-        <CopyButton text={codeText} />
+        <SyntaxHighlighter
+          language={language}
+          style={nord}
+          showLineNumbers={true}
+          customStyle={{
+            marginTop: '0',
+            borderTopLeftRadius: fileName ? '0' : '0.5rem',
+            borderTopRightRadius: '0.5rem',
+            borderBottomLeftRadius: '0.5rem',
+            borderBottomRightRadius: '0.5rem',
+            backgroundColor: 'oklch(var(--n))',
+          }}
+        >
+          {codeText}
+        </SyntaxHighlighter>
+        <div className={`absolute right-3 ${fileName ? 'top-11' : 'top-3'}`}>
+          <CopyButton text={codeText} />
+        </div>
       </div>
     </div>
   )

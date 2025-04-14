@@ -5,16 +5,16 @@ import LinkButton from '@/components/ui/linkButton'
 function SuccessPage() {
   return (
     <div className="my-20">
-      <h1 className="flex justify-center text-2xl md:text-4xl my-10">
+      <h1 className="flex justify-center text-2xl md:text-4xl font-bold my-10">
         <div className="text-success mr-5">
           <CustomIcon icon={FaCheckCircle} size={40} />
         </div>
         Thank your for your inquiry.
       </h1>
-      <p className="flex justify-center">
+      <p className="flex justify-center text-base-content">
         I will contact you as soon as possible.
       </p>
-      <p className="flex justify-center">
+      <p className="flex justify-center mt-8">
         <LinkButton link="/">Back to Home</LinkButton>
       </p>
     </div>
