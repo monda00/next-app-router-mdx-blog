@@ -36,6 +36,7 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "resend": "^3.2.0",
+    "rss": "^1.2.2",
     "tocbot": "^4.25.0"
   },
   "devDependencies": {
@@ -44,6 +45,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.11",
+    "@types/rss": "^0.0.32",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.20.0",
     "autoprefixer": "^10.0.1",

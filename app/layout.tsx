@@ -51,6 +51,12 @@ export default function RootLayout({
           <GoogleAnalytics />
         </Suspense>
         <GoogleAdScript />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Amateur Engineer's Blog RSS"
+          href={`${siteURL}/rss.xml`}
+        />
       </head>
       <body className={`prose max-w-none ${notoSansJP.className}`}>
         <Providers>
