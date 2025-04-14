@@ -51,7 +51,7 @@ function PostCard({
       </motion.div>
       <div className={`${titleClassName}`}>
         <Link href={`/${post.slug}`} className="no-underline">
-          <h2 className={`font-semibold ${textSize} my-0`}>
+          <h2 className={`font-semibold ${textSize} my-0 hover:text-primary`}>
             {post.data.title}
           </h2>
         </Link>
@@ -61,10 +61,19 @@ function PostCard({
             {post.data.publish}
           </div>
           {showCategory && (
-            <div className={`flex items-center`}>
-              <CustomIcon icon={FaRegFolderOpen} size={15} className="mr-1" />
-              {allCategories[post.data.category as keyof typeof allCategories]}
-            </div>
+            <Link
+              href={`/category/${post.data.category}`}
+              className="no-underline"
+            >
+              <span className={`flex items-center`}>
+                <CustomIcon icon={FaRegFolderOpen} size={15} className="mr-1" />
+                {
+                  allCategories[
+                    post.data.category as keyof typeof allCategories
+                  ]
+                }
+              </span>
+            </Link>
           )}
         </div>
       </div>

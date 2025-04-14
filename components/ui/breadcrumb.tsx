@@ -13,13 +13,11 @@ function Breadcrumb({ category, className }: BreadcrumbProps) {
   return (
     <div className={className}>
       <p className="flex items-center justify-start text-base-content text-sm">
-        <CustomIcon
-          icon={IoHomeOutline}
-          size={20}
-          className="text-base-content mr-1"
-        />
         <Link href="/" className="no-underline">
-          Home
+          <span className="flex items-center">
+            <CustomIcon icon={IoHomeOutline} size={20} className="mr-1" />
+            Home
+          </span>
         </Link>
         <CustomIcon
           icon={LiaGreaterThanSolid}

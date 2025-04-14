@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FaRegFolderOpen } from 'react-icons/fa'
 import { GoClock } from 'react-icons/go'
 import { MdUpdate } from 'react-icons/md'
@@ -40,10 +41,12 @@ function PostTitle({
                 {updateDate}
               </div>
             </div>
-            <div className={`flex items-center mt-2 md:mt-0`}>
-              <CustomIcon icon={FaRegFolderOpen} size={15} className="mr-1" />
-              {allCategories[category as keyof typeof allCategories]}
-            </div>
+            <Link href={`/category/${category}`} className="no-underline">
+              <span className={`flex items-center mt-2 md:mt-0`}>
+                <CustomIcon icon={FaRegFolderOpen} size={15} className="mr-1" />
+                {allCategories[category as keyof typeof allCategories]}
+              </span>
+            </Link>
           </div>
           <div>
             <TagList tags={tags} />
