@@ -1,40 +1,40 @@
-import CategoryIcon from '@/components/category/categoryIcon'
+import { FaTag } from 'react-icons/fa'
 import GoogleAdsense from '@/components/googleAdsense/googleAds'
 import PostList from '@/components/post/postList'
 import RankingSide from '@/components/post/rankingSide'
-import BreadcrumbCategory from '@/components/ui/breadcrumbCategory'
+import BreadcrumbTag from '@/components/ui/breadcrumbTag'
+import { CustomIcon } from '@/components/ui/customIcon'
 import ProfileCard from '@/components/ui/profileCard'
-import { allCategories } from '@/libs/constants'
-import { GetPostsByCategory } from '@/libs/posts'
+import { GetPostsByTag, GetAllTagsWithCount } from '@/libs/posts'
 
-interface CategoryPageProps {
+interface TagPostsProps {
   params: {
-    category: string
+    normalizedTag: string
   }
 }
 
 export function generateStaticParams() {
-  const categoryKeys = Object.keys(allCategories)
-  return categoryKeys.map((category) => ({ params: { category } }))
+  const tags = GetAllTagsWithCount()
+  return tags.map((tag) => ({
+    params: { normalizedTag: tag.normalizedName },
+  }))
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const { category } = params
-  const posts = GetPostsByCategory(category)
+export default function TagPosts({ params }: TagPostsProps) {
+  const normalizedTag = decodeURIComponent(params.normalizedTag)
 
-  const categoryName = allCategories[category as keyof typeof allCategories]
+  const tags = GetAllTagsWithCount()
+  const currentTag = tags.find((tag) => tag.normalizedName === normalizedTag)
+  const tagName = currentTag ? currentTag.name : normalizedTag
+  const posts = GetPostsByTag(normalizedTag)
 
   return (
     <div className="w-96 md:w-180 lg:w-240 xl:w-304 mx-auto">
-      <BreadcrumbCategory category={category} className="mt-8 ml-8 md:ml-0" />
+      <BreadcrumbTag tagName={tagName} />
       <div className="flex flex-col justify-center items-center md:items-stretch">
         <h2 className="flex mt-5">
-          <CategoryIcon
-            category={category[0]}
-            size={30}
-            className="text-primary mr-2"
-          />
-          {categoryName}
+          <CustomIcon icon={FaTag} size={30} className="text-primary mr-2" />
+          {tagName}
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch w-full">
           <div className="w-full md:w-9/12 pr-0 md:pr-5 lg:pr-10">

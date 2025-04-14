@@ -22,12 +22,42 @@ export async function fetchPopularPosts(pageSize: number): Promise<string[]> {
       },
     ],
     dimensionFilter: {
-      filter: {
-        fieldName: 'pagePath',
-        stringFilter: {
-          matchType: 5,
-          value: '^/[0-9a-zA-Z-]+$',
-        },
+      andGroup: {
+        expressions: [
+          {
+            notExpression: {
+              filter: {
+                fieldName: 'pagePath',
+                stringFilter: {
+                  matchType: 1,
+                  value: '/',
+                },
+              },
+            },
+          },
+          {
+            notExpression: {
+              filter: {
+                fieldName: 'pagePath',
+                stringFilter: {
+                  matchType: 1,
+                  value: '/tag',
+                },
+              },
+            },
+          },
+          {
+            notExpression: {
+              filter: {
+                fieldName: 'pagePath',
+                stringFilter: {
+                  matchType: 2,
+                  value: '/tag/',
+                },
+              },
+            },
+          },
+        ],
       },
     },
     limit: pageSize,

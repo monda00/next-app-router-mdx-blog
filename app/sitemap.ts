@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const posts = GetAllPosts()
   const dynamicPaths = posts.map((post) => ({
-    url: `${siteURL}/posts/${post.slug}`,
+    url: `${siteURL}/${post.slug}`,
     lastModified: new Date(post.data.lastUpdate).toISOString(),
   }))
 

@@ -8,6 +8,7 @@
     "plugin:import/typescript",
     "prettier"
   ],
+  "ignorePatterns": ["next.config.mjs"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["./tsconfig.json"]

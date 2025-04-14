@@ -6,3 +6,9 @@ export type Post = {
     [key: string]: any
   }
 }
+
+export type SearchResultPost = {
+  slug: string
+  title: string
+  body: string
+}

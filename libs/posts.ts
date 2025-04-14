@@ -109,3 +109,68 @@ export function GetPickUpPosts() {
     }
   })
 }
+
+export function normalizeTag(tag: string): string {
+  return tag
+    .normalize('NFKC')
+    .replace(/\s+/g, '')
+    .toLowerCase()
+    .replace(/[／＼/]/g, '')
+    .replace(/[.]/g, '')
+}
+
+export function GetAllTagsWithCount() {
+  const posts = GetAllPosts()
+  const tagMap = new Map<string, { name: string; count: number }>()
+
+  posts.forEach((post) => {
+    if (!post.data.tags) return
+
+    post.data.tags.forEach((tag: string) => {
+      const normalizedTag = normalizeTag(tag)
+      const existing = tagMap.get(normalizedTag)
+
+      if (existing) {
+        existing.count += 1
+      } else {
+        tagMap.set(normalizedTag, { name: tag, count: 1 })
+      }
+    })
+  })
+
+  return Array.from(tagMap.entries())
+    .map(([normalizedName, { name, count }]) => ({
+      name,
+      normalizedName,
+      count,
+    }))
+    .sort((a, b) => b.count - a.count)
+}
+
+export function GetPostsByTag(normalizedTagName: string) {
+  const slugs = GetAllPostSlugs()
+  const posts = slugs.map((slug) => {
+    const markdown = readFileSync(`contents/posts/${slug}.mdx`, 'utf8')
+
+    const { content, data } = matter(markdown)
+    return {
+      slug,
+      content,
+      data,
+    }
+  })
+  const sortedPosts = posts
+    .filter(
+      (post) =>
+        post.data.tags &&
+        post.data.tags.some(
+          (t: string) => normalizeTag(t) === normalizedTagName
+        )
+    )
+    .sort((a, b) => {
+      const dateA = new Date(a.data.publish)
+      const dateB = new Date(b.data.publish)
+      return dateB.getTime() - dateA.getTime()
+    })
+  return sortedPosts
+}
