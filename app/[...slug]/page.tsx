@@ -4,7 +4,7 @@ import PostTitle from '@/components/post/contents/postTitle'
 import RelatedPosts from '@/components/post/contents/relatedPosts'
 import SnsShareSide from '@/components/post/contents/snsShareSide'
 import Toc from '@/components/post/contents/toc'
-import Breadcrumb from '@/components/ui/breadcrumb'
+import BreadcrumbCategory from '@/components/ui/breadcrumbCategory'
 import ProfileCard from '@/components/ui/profileCard'
 import { siteURL } from '@/libs/constants'
 import { GetAllPostSlugs, GetPostBySlug } from '@/libs/posts'
@@ -25,7 +25,10 @@ export default function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="flex flex-col pb-8">
-      <Breadcrumb category={data.category} className="ml-4 md:ml-22 mt-4" />
+      <BreadcrumbCategory
+        category={data.category}
+        className="ml-4 md:ml-22 mt-4"
+      />
       <div className="flex flex-col lg:flex-row justify-center w-96 md:w-180 lg:w-240 xl:w-304 mt-2 md:mt-10 mx-auto">
         <SnsShareSide url={`${siteURL}/${params.slug}`} title={data.title} />
         <div className="w-full lg:w-9/12 lg:pr-8">

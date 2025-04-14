@@ -4,12 +4,12 @@ import { LiaGreaterThanSolid } from 'react-icons/lia'
 import { CustomIcon } from '@/components/ui/customIcon'
 import { allCategories } from '@/libs/constants'
 
-interface BreadcrumbProps {
+interface BreadcrumbCategoryProps {
   category: string
   className?: string
 }
 
-function Breadcrumb({ category, className }: BreadcrumbProps) {
+function BreadcrumbCategory({ category, className }: BreadcrumbCategoryProps) {
   return (
     <div className={className}>
       <p className="flex items-center justify-start text-base-content text-sm">
@@ -32,4 +32,4 @@ function Breadcrumb({ category, className }: BreadcrumbProps) {
   )
 }
 
-export default Breadcrumb
+export default BreadcrumbCategory

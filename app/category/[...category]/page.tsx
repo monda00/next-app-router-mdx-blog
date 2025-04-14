@@ -2,7 +2,7 @@ import CategoryIcon from '@/components/category/categoryIcon'
 import GoogleAdsense from '@/components/googleAdsense/googleAds'
 import PostList from '@/components/post/postList'
 import RankingSide from '@/components/post/rankingSide'
-import Breadcrumb from '@/components/ui/breadcrumb'
+import BreadcrumbCategory from '@/components/ui/breadcrumbCategory'
 import ProfileCard from '@/components/ui/profileCard'
 import { allCategories } from '@/libs/constants'
 import { GetPostsByCategory } from '@/libs/posts'
@@ -26,7 +26,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="w-96 md:w-180 lg:w-240 xl:w-304 mx-auto">
-      <Breadcrumb category={category} className="mt-8 ml-8 md:ml-0" />
+      <BreadcrumbCategory category={category} className="mt-8 ml-8 md:ml-0" />
       <div className="flex flex-col justify-center items-center md:items-stretch">
         <h2 className="flex mt-5">
           <CategoryIcon
