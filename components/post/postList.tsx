@@ -23,7 +23,6 @@ function PostList({ posts }: PostListProps) {
   const pageCount = Math.ceil(posts.length / itemsPerPage)
 
   const handlePageChange = (event: selectedItem) => {
-    console.log('click')
     const newOffset = (event.selected * itemsPerPage) % posts.length
     setItemOffset(newOffset)
   }
