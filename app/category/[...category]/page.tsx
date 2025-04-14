@@ -13,7 +13,7 @@ interface CategoryPageProps {
   }
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const categoryKeys = Object.keys(allCategories)
   return categoryKeys.map((category) => ({ params: { category } }))
 }

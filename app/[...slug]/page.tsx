@@ -15,12 +15,12 @@ interface PostPageProps {
   }
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const slugs = GetAllPostSlugs()
   return slugs.map((slug) => ({ params: { slug } }))
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default function PostPage({ params }: PostPageProps) {
   const { content, data } = GetPostBySlug(params.slug)
 
   return (
