@@ -22,6 +22,8 @@ https://amateur-engineer-blog.com/
 - [Tocbot](https://tscanlin.github.io/tocbot/)
 - [Resend](https://resend.com/docs/introduction)
 - [openGraphScraper](https://github.com/jshemas/openGraphScraper)
+- [Fuse.js](https://www.fusejs.io/)
+- [rss](https://github.com/dylang/node-rss)
 - Google Analytics
 - Google Adsense
 

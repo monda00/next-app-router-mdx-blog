@@ -10,9 +10,9 @@ import { siteURL } from '@/libs/constants'
 import { GetAllPostSlugs, GetPostBySlug } from '@/libs/posts'
 
 interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export function generateStaticParams() {
@@ -20,14 +20,15 @@ export function generateStaticParams() {
   return slugs.map((slug) => ({ params: { slug } }))
 }
 
-export default function PostPage({ params }: PostPageProps) {
+export default async function PostPage(props: PostPageProps) {
+  const params = await props.params
   const { content, data } = GetPostBySlug(params.slug)
 
   return (
     <div className="flex flex-col pb-8">
       <BreadcrumbCategory
         category={data.category}
-        className="ml-4 md:ml-22 mt-4"
+        className="ml-4 md:ml-22 mt-8"
       />
       <div className="flex flex-col lg:flex-row justify-center w-96 md:w-180 lg:w-240 xl:w-304 mt-2 md:mt-10 mx-auto">
         <SnsShareSide url={`${siteURL}/${params.slug}`} title={data.title} />

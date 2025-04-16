@@ -9,7 +9,7 @@ function ProfileCardHome() {
   return (
     <div className="flex justify-center py-10 md:py-20">
       <div className="bg-neutral w-80 md:w-148 lg:w-192 xl:w-256 rounded-box p-8">
-        <h2 className="flex justify-center md:justify-start text-neutral-content text-xl md:text-2xl my-0">
+        <h2 className="flex justify-center md:justify-start text-neutral-content text-xl md:text-2xl font-bold my-0">
           Profile
         </h2>
         <div className="flex flex-col md:flex-row items-center">
@@ -18,10 +18,10 @@ function ProfileCardHome() {
             width={100}
             height={100}
             alt="author"
-            className="w-auto h-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mr-0 my-2 md:mr-5"
+            className="w-auto h-28 rounded-full ring-3 ring-primary ring-offset-base-100 ring-offset-2 mr-0 my-2 md:mr-5"
           />
           <div>
-            <h3 className="flex justify-center md:justify-start text-neutral-content text-xl md:text-2xl my-0 p-2">
+            <h3 className="flex justify-center md:justify-start text-neutral-content text-xl md:text-2xl font-bold my-0 p-2">
               Masa
             </h3>
             <p className="text-neutral-content text-base md:text-lg px-2 mb-2">

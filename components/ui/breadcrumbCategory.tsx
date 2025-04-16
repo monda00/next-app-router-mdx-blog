@@ -12,7 +12,7 @@ interface BreadcrumbCategoryProps {
 function BreadcrumbCategory({ category, className }: BreadcrumbCategoryProps) {
   return (
     <div className={className}>
-      <p className="flex items-center justify-start text-base-content text-sm">
+      <p className="flex items-center justify-start text-base-content text-sm font-medium">
         <Link href="/" className="no-underline">
           <span className="flex items-center">
             <CustomIcon icon={IoHomeOutline} size={20} className="mr-1" />

@@ -8,7 +8,7 @@ import { allCategories, selectedCategories } from '@/libs/constants'
 function CategoryTop() {
   return (
     <div className="w-96 md:w-180 lg:w-240 xl:w-304 mx-auto pb-16">
-      <h2 className="flex justify-center items-center text-2xl md:text-3xl">
+      <h2 className="flex justify-center items-center text-2xl md:text-3xl font-bold mt-16 mb-8">
         <CustomIcon
           icon={MdFormatListBulleted}
           size={28}

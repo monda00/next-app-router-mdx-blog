@@ -1,10 +1,9 @@
 'use client'
 
-import { ThemeProvider } from 'next-themes'
-import { ThemeProviderProps } from 'next-themes/dist/types'
+import { ThemeProvider, ThemeProviderProps } from 'next-themes'
 
-function Prviders({ children }: ThemeProviderProps) {
+function Providers({ children }: ThemeProviderProps) {
   return <ThemeProvider>{children}</ThemeProvider>
 }
 
-export default Prviders
+export default Providers

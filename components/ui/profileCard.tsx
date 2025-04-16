@@ -22,7 +22,7 @@ function ProfileCard({ widthClass = 'w-60' }: ProfileCardProps) {
             width={100}
             height={100}
             alt="author"
-            className="w-auto h-20 lg:h-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto my-2"
+            className="w-auto h-20 lg:h-28 rounded-full ring-3 ring-primary ring-offset-base-100 ring-offset-2 mx-auto my-2"
           />
           <div>
             <h2 className="flex justify-center text-xl lg:text-2xl font-medium text-base-content my-0 p-2">

@@ -37,7 +37,7 @@ function ThemeToggleButton() {
         type="checkbox"
         value="nordDark"
         checked={theme === 'nordDark'}
-        className="toggle theme-controller rounded-xl border-base-100"
+        className="toggle theme-controller rounded-xl border-base-100 bg-base-100"
         onChange={handleTheme}
       />
       <svg

@@ -1,6 +1,100 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* tailwindcss */
+
+@import 'tailwindcss';
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@plugin "@tailwindcss/typography";
+@theme {
+  --spacing-22: 5.5rem;
+  --spacing-104: 26rem;
+  --spacing-108: 27rem;
+  --spacing-112: 28rem;
+  --spacing-116: 29rem;
+  --spacing-120: 30rem;
+  --spacing-124: 31rem;
+  --spacing-128: 32rem;
+  --spacing-132: 33rem;
+  --spacing-140: 35rem;
+  --spacing-148: 37rem;
+  --spacing-160: 40rem;
+  --spacing-180: 45rem;
+  --spacing-192: 48rem;
+  --spacing-224: 56rem;
+  --spacing-240: 60rem;
+  --spacing-256: 64rem;
+  --spacing-272: 68rem;
+  --spacing-288: 72rem;
+  --spacing-304: 76rem;
+}
+
+/* daisyui */
+
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: 'nord';
+}
+@plugin "daisyui/theme" {
+  name: 'nordDark';
+
+  --color-base-100: #3b4252;
+  --color-base-200: #434c5e;
+  --color-base-300: #4c566a;
+  --color-base-content: #ebeff4;
+  --color-primary: #6f8eb5;
+  --color-secondary: #92aec9;
+  --color-accent: #9acad7;
+  --color-neutral: #2e3440;
+  --color-neutral-content: #d8dee9;
+  --color-info: #b48eae;
+  --color-success: #a3be8c;
+  --color-warning: #ebcb8b;
+  --color-error: #c6737b;
+}
+
+[data-theme='nord'] {
+  .bg-keyvisual {
+    background: linear-gradient(to bottom left, #92aec9, #9acad7);
+  }
+  .bg-linkcard {
+    background-color: #d8dee9;
+  }
+  .bg-linkcard:hover {
+    background-color: #cbd3e2;
+  }
+}
+
+[data-theme='nordDark'] {
+  .bg-keyvisual {
+    background: linear-gradient(to bottom left, #9acad7, #6f8eb5);
+  }
+  .bg-linkcard {
+    background-color: #4c566a;
+  }
+  .bg-linkcard:hover {
+    background-color: #434c5e;
+  }
+}
+
+/* ToC */
 
 .toc-list {
   @apply w-full my-0 px-0;
@@ -26,10 +120,23 @@
   @apply text-primary font-bold bg-base-300;
 }
 
+/* Link */
+
 a:hover {
   @apply text-primary;
 }
 
+/* Post */
+
 .post li::marker {
   @apply text-primary;
+}
+
+/* Message */
+.message-affiliate {
+  @apply flex justify-center w-fit bg-base-300 text-base-content rounded-lg mx-auto py-1;
+}
+
+.message-affiliate p {
+  @apply text-sm px-4 my-0;
 }

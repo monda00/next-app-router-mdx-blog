@@ -8,9 +8,9 @@ import ProfileCard from '@/components/ui/profileCard'
 import { GetPostsByTag, GetAllTagsWithCount } from '@/libs/posts'
 
 interface TagPostsProps {
-  params: {
+  params: Promise<{
     normalizedTag: string
-  }
+  }>
 }
 
 export function generateStaticParams() {
@@ -20,7 +20,8 @@ export function generateStaticParams() {
   }))
 }
 
-export default function TagPosts({ params }: TagPostsProps) {
+export default async function TagPosts(props: TagPostsProps) {
+  const params = await props.params
   const normalizedTag = decodeURIComponent(params.normalizedTag)
 
   const tags = GetAllTagsWithCount()
@@ -32,7 +33,7 @@ export default function TagPosts({ params }: TagPostsProps) {
     <div className="w-96 md:w-180 lg:w-240 xl:w-304 mx-auto">
       <BreadcrumbTag tagName={tagName} />
       <div className="flex flex-col justify-center items-center md:items-stretch">
-        <h2 className="flex mt-5">
+        <h2 className="flex text-2xl font-bold mt-8 mb-4">
           <CustomIcon icon={FaTag} size={30} className="text-primary mr-2" />
           {tagName}
         </h2>

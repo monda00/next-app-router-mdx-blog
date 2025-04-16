@@ -2,6 +2,7 @@ import { MDXComponents } from 'mdx/types'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypekatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
+import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import CodeBlock from '@/components/post/contents/codeBlock'
@@ -9,6 +10,7 @@ import LinkCard from '@/components/post/contents/linkCard'
 import SnsShare from '@/components/post/contents/snsShare'
 import BuyMeACoffee from '@/components/ui/buyMeACoffee'
 import { siteURL } from '@/libs/constants'
+import { remarkCustomDirective } from '@/libs/remark'
 
 interface PostContentProps {
   content: string
@@ -19,7 +21,12 @@ interface PostContentProps {
 function PostContent({ content, slug, title }: PostContentProps) {
   const options = {
     mdxOptions: {
-      remarkPlugins: [remarkGfm, remarkMath],
+      remarkPlugins: [
+        remarkGfm,
+        remarkMath,
+        remarkDirective,
+        remarkCustomDirective,
+      ],
       rehypePlugins: [rehypeSlug, rehypekatex],
     },
   }
@@ -49,7 +56,6 @@ function PostContent({ content, slug, title }: PostContentProps) {
   return (
     <div className="post prose max-w-full rounded-lg p-4 mt-8 mb-5">
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <MDXRemote source={content} options={options} components={components} />
       <div className="mt-10">
         <div className="divider text-xl">Support</div>

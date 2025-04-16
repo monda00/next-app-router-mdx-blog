@@ -11,7 +11,7 @@ function PickUpTop({ posts }: PickUpTopProps) {
   return (
     <div className="pb-10">
       <div className="flex flex-col justify-center items-center lg:items-stretch w-96 md:w-180 lg:w-240 xl:w-304 mx-auto">
-        <h2 className="flex items-center text-2xl md:text-3xl">
+        <h2 className="flex items-center text-2xl md:text-3xl font-bold mt-16 mb-8">
           <CustomIcon
             icon={PiThumbsUpBold}
             size={28}

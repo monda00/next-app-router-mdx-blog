@@ -54,15 +54,15 @@ export default function RootLayout({
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="Amateur Engineer's Blog RSS"
+          title="Next.js with next-mdx-remote Blog RSS"
           href={`${siteURL}/rss.xml`}
         />
       </head>
-      <body className={`prose max-w-none ${notoSansJP.className}`}>
+      <body className={`${notoSansJP.className}`}>
         <Providers>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-grow">{children}</main>
+            <main className="grow">{children}</main>
             <Footer />
           </div>
         </Providers>
